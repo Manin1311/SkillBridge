@@ -8,10 +8,10 @@ services:
     region: singapore # or oregon, frankfurt, etc.
     plan: free
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn --worker-class eventlet -w 1 wsgi:app
+    startCommand: gunicorn -w 1 --threads 4 wsgi:app
     envVars:
       - key: PYTHON_VERSION
-        value: 3.11.8
+        value: 3.10.11
       - key: FLASK_ENV
         value: production
       - key: SECRET_KEY
