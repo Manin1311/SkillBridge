@@ -11,5 +11,5 @@ config_name = os.environ.get('FLASK_ENV', 'production')
 # Create the application instance
 app = create_app(config_name)
 
-if __name__ == "__main__":
-    socketio.run(app)
+# For gunicorn: expose the Flask app directly
+# Flask-SocketIO will use threading mode (long-polling) automatically
