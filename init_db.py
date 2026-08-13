@@ -10,6 +10,12 @@ Author: SkillBridge Team
 Purpose: Initialize database with default data
 """
 
+import sys
+if hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+if hasattr(sys.stderr, 'reconfigure'):
+    sys.stderr.reconfigure(encoding='utf-8', errors='replace')
+
 from models import db, User, Category, Service
 from werkzeug.security import generate_password_hash
 

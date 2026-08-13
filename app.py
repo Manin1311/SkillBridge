@@ -14,7 +14,14 @@ from flask_socketio import SocketIO
 from config import get_config
 from models import db, User
 import os
+import sys
 from dotenv import load_dotenv
+
+# Ensure stdout handles UTF-8 on Windows terminals
+if hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+if hasattr(sys.stderr, 'reconfigure'):
+    sys.stderr.reconfigure(encoding='utf-8', errors='replace')
 
 # Load environment variables
 load_dotenv()

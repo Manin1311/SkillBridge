@@ -29,9 +29,14 @@ class Config:
     # In production, this should be a strong random string from environment variable
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'dev-secret-key-change-in-production'
     
+    # Helper method to get formatted Database URL (fixes Render postgres:// prefix)
+    db_url = os.environ.get('DATABASE_URL')
+    if db_url and db_url.startswith('postgres://'):
+        db_url = db_url.replace('postgres://', 'postgresql://', 1)
+
     # Database Configuration
     # SQLAlchemy will use this URI to connect to the database
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
+    SQLALCHEMY_DATABASE_URI = db_url or \
         'sqlite:///' + os.path.join(basedir, 'skillbridge.db')
     
     # Disable SQLAlchemy modification tracking (saves memory)
@@ -103,7 +108,10 @@ class ProductionConfig(Config):
     SECRET_KEY = os.environ.get('SECRET_KEY')
     
     # Production database (PostgreSQL, MySQL, etc.)
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
+    db_url = os.environ.get('DATABASE_URL')
+    if db_url and db_url.startswith('postgres://'):
+        db_url = db_url.replace('postgres://', 'postgresql://', 1)
+    SQLALCHEMY_DATABASE_URI = db_url or 'sqlite:///' + os.path.join(basedir, 'skillbridge.db')
     
     # Disable SQL query logging in production
     SQLALCHEMY_ECHO = False

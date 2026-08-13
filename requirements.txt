@@ -8,9 +8,16 @@ Flask-Login==0.6.3
 Flask-WTF==1.2.1
 WTForms==3.1.1
 
-# Real-time Communication
+# Real-time Communication & WebSockets
 Flask-SocketIO==5.5.1
-#python-socketio==5.11.0
+python-socketio==5.11.0
+eventlet==0.35.2
+gevent==23.9.1
+gevent-websocket==0.10.1
+
+# Production WSGI Server & Database Adapters (Render Deployment)
+gunicorn==21.2.0
+psycopg2-binary==2.9.9
 
 # Database
 SQLAlchemy==2.0.23

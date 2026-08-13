@@ -1,0 +1,18 @@
+# Render Deployment Blueprint Configuration for SkillBridge
+# Uses Neon PostgreSQL Database
+
+services:
+  - type: web
+    name: skillbridge-app
+    runtime: python
+    region: singapore # or oregon, frankfurt, etc.
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn --worker-class eventlet -w 1 wsgi:app
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        value: postgresql://neondb_owner:npg_2SOLT5kFRZvt@ep-falling-credit-ayq21beq-pooler.c-5.us-east-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require
