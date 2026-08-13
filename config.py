@@ -42,6 +42,13 @@ class Config:
     # Disable SQLAlchemy modification tracking (saves memory)
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     
+    # Engine Options for Pool Health (fixes Neon DB idle SSL disconnects)
+    SQLALCHEMY_ENGINE_OPTIONS = {
+        'pool_pre_ping': True,
+        'pool_recycle': 280,
+        'pool_timeout': 30,
+    }
+    
     # Session Configuration
     # Sessions will expire after 7 days of inactivity
     PERMANENT_SESSION_LIFETIME = timedelta(days=7)
