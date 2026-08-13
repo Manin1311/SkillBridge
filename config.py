@@ -113,6 +113,10 @@ class ProductionConfig(Config):
         db_url = db_url.replace('postgres://', 'postgresql://', 1)
     SQLALCHEMY_DATABASE_URI = db_url or 'sqlite:///' + os.path.join(basedir, 'skillbridge.db')
     
+    # Google OAuth
+    GOOGLE_CLIENT_ID = os.environ.get('GOOGLE_CLIENT_ID')
+    GOOGLE_CLIENT_SECRET = os.environ.get('GOOGLE_CLIENT_SECRET')
+
     # Disable SQL query logging in production
     SQLALCHEMY_ECHO = False
 

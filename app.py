@@ -49,6 +49,10 @@ def create_app(config_name='default'):
     # Create Flask application instance
     app = Flask(__name__)
     
+    # Handle reverse proxy headers (Render HTTPS load balancer)
+    from werkzeug.middleware.proxy_fix import ProxyFix
+    app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_proto=1, x_host=1, x_prefix=1)
+
     # Load configuration
     config_class = get_config(config_name)
     app.config.from_object(config_class)
