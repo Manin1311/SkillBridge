@@ -11,10 +11,16 @@ Purpose: Initialize database with default data
 """
 
 import sys
+import os
+from dotenv import load_dotenv
+
 if hasattr(sys.stdout, 'reconfigure'):
     sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 if hasattr(sys.stderr, 'reconfigure'):
     sys.stderr.reconfigure(encoding='utf-8', errors='replace')
+
+# Load environment variables FIRST
+load_dotenv()
 
 from models import db, User, Category, Service
 from werkzeug.security import generate_password_hash

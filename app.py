@@ -8,11 +8,6 @@ Author: SkillBridge Team
 Purpose: Initialize and configure Flask application
 """
 
-from flask import Flask, render_template
-from flask_login import LoginManager
-from flask_socketio import SocketIO
-from config import get_config
-from models import db, User
 import os
 import sys
 from dotenv import load_dotenv
@@ -23,8 +18,14 @@ if hasattr(sys.stdout, 'reconfigure'):
 if hasattr(sys.stderr, 'reconfigure'):
     sys.stderr.reconfigure(encoding='utf-8', errors='replace')
 
-# Load environment variables
+# Load environment variables FIRST before loading app config
 load_dotenv()
+
+from flask import Flask, render_template
+from flask_login import LoginManager
+from flask_socketio import SocketIO
+from config import get_config
+from models import db, User
 
 # Initialize Flask-Login and Flask-Mail
 from extensions import login_manager, oauth, socketio
