@@ -12,8 +12,6 @@ WTForms==3.1.1
 Flask-SocketIO==5.5.1
 python-socketio==5.11.0
 eventlet==0.35.2
-gevent==23.9.1
-gevent-websocket==0.10.1
 
 # Production WSGI Server & Database Adapters (Render Deployment)
 gunicorn==21.2.0
