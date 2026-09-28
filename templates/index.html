@@ -117,9 +117,9 @@
                 <a href="{{ url_for('service.detail', service_id=service.id) }}" class="text-decoration-none text-dark">
                     <div class="card card-custom h-100">
                         <div class="card-img-wrapper position-relative">
-                            <img src="{{ url_for('static', filename='images/' + service.image_url) }}"
+                            <img src="{{ service.get_image_url() }}"
                                 class="card-img-top" alt="{{ service.title }}"
-                                onerror="this.src='https://via.placeholder.com/400x250'">
+                                onerror="this.src='https://images.unsplash.com/photo-1542744173-05336fcc7ad4?w=800&auto=format&fit=crop&q=80'">
                             <span class="badge badge-primary position-absolute top-0 start-0 m-3">Featured</span>
                         </div>
                         <div class="card-body">
@@ -213,8 +213,9 @@
                     class="text-decoration-none text-dark">
                     <div class="card card-custom h-100">
                         <div class="position-relative" style="height: 150px; overflow: hidden;">
-                            <img src="{{ community.image_url or 'https://via.placeholder.com/400x200' }}"
-                                class="w-100 h-100 object-fit-cover" alt="{{ community.name }}">
+                            <img src="{{ community.get_image_url() }}"
+                                class="w-100 h-100 object-fit-cover" alt="{{ community.name }}"
+                                onerror="this.src='https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&auto=format&fit=crop&q=80'">
                             <div class="position-absolute bottom-0 start-0 w-100 p-3 text-white"
                                 style="background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);">
                                 <h4 class="mb-0">{{ community.name }}</h4>

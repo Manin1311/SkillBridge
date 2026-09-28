@@ -161,9 +161,9 @@
                             <!-- Service Image -->
                             <div class="position-relative">
                                 <a href="{{ url_for('service.detail', service_id=service.id) }}">
-                                    <img src="{{ url_for('static', filename='images/' + service.image_url) if service.image_url else 'https://images.unsplash.com/photo-1542744173-05336fcc7ad4' }}"
+                                    <img src="{{ service.get_image_url() }}"
                                         class="card-img-top object-fit-cover" height="200" alt="{{ service.title }}"
-                                        onerror="this.src='https://via.placeholder.com/400x300?text=Service'">
+                                        onerror="this.src='https://images.unsplash.com/photo-1542744173-05336fcc7ad4?w=800&auto=format&fit=crop&q=80'">
                                 </a>
                                 <span
                                     class="badge bg-primary position-absolute top-0 start-0 m-3 rounded-pill px-3">Featured</span>
@@ -173,8 +173,8 @@
                             <div class="card-body p-3">
                                 <!-- Provider Info -->
                                 <div class="d-flex align-items-center mb-2">
-                                    <img src="{{ service.provider.avatar_url }}" class="rounded-circle me-2" width="24"
-                                        height="24" onerror="this.src='https://via.placeholder.com/24?text=U'">
+                                    <img src="{{ service.provider.get_avatar_url() }}" class="rounded-circle me-2" width="24"
+                                        height="24" onerror="this.src='https://ui-avatars.com/api/?name={{ service.provider.username }}&background=6366f1&color=fff&size=64'">
                                     <span class="small fw-bold text-dark">{{ service.provider.username }}</span>
                                 </div>
 

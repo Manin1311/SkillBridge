@@ -31,9 +31,9 @@
                             <tr>
                                 <td>
                                     <div class="d-flex align-items-center">
-                                        <img src="{{ url_for('static', filename='images/' + user.avatar_url) }}"
+                                        <img src="{{ user.get_avatar_url() }}"
                                             class="rounded-circle me-2" width="40" height="40"
-                                            onerror="this.src='https://via.placeholder.com/40?text={{ user.username[0].upper() }}'">
+                                            onerror="this.src='https://ui-avatars.com/api/?name={{ user.username }}&background=6366f1&color=fff&size=64'">
                                         <div>
                                             <div class="fw-medium">{{ user.username }}</div>
                                             <div class="small text-muted">{{ user.full_name or 'N/A' }}</div>

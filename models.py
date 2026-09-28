@@ -311,7 +311,21 @@ class Service(db.Model):
     favorited_by = db.relationship('Favorite', backref='service', lazy='dynamic', cascade='all, delete-orphan')
     
     # Media
-    image_url = db.Column(db.String(255), default='default-service.jpg')
+    image_url = db.Column(db.String(500), default='default-service.jpg')
+    
+    def get_image_url(self):
+        """
+        Get proper URL for service image.
+        Returns external URL, valid static file, or reliable Unsplash fallback.
+        """
+        from flask import url_for
+        if not self.image_url or self.image_url == 'default-service.jpg':
+            return "https://images.unsplash.com/photo-1542744173-05336fcc7ad4?w=800&auto=format&fit=crop&q=80"
+        
+        if self.image_url.startswith('http://') or self.image_url.startswith('https://'):
+            return self.image_url
+            
+        return url_for('static', filename='images/' + self.image_url)
     
     # Tags for search (stored as comma-separated string)
     tags = db.Column(db.String(255))
@@ -885,8 +899,22 @@ class Community(db.Model):
     # Community details
     name = db.Column(db.String(100), nullable=False, unique=True, index=True)
     description = db.Column(db.Text, nullable=False)
-    image_url = db.Column(db.String(255))
+    image_url = db.Column(db.String(500))
     category = db.Column(db.String(50))  # e.g., 'Web Development', 'Design', etc.
+    
+    def get_image_url(self):
+        """
+        Get proper URL for community banner image.
+        Returns external URL, valid static file, or reliable Unsplash fallback.
+        """
+        from flask import url_for
+        if not self.image_url or self.image_url == 'default-community.png':
+            return "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&auto=format&fit=crop&q=80"
+        
+        if self.image_url.startswith('http://') or self.image_url.startswith('https://'):
+            return self.image_url
+            
+        return url_for('static', filename='images/' + self.image_url)
     
     # Status
     is_active = db.Column(db.Boolean, default=True)

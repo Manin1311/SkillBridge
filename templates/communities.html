@@ -25,8 +25,9 @@
             <div class="col-md-6 col-lg-4">
                 <div class="card card-custom h-100">
                     <div class="position-relative" style="height: 200px; overflow: hidden;">
-                        <img src="{{ community.image_url or 'https://via.placeholder.com/400x250' }}"
-                            class="w-100 h-100 object-fit-cover" alt="{{ community.name }}">
+                        <img src="{{ community.get_image_url() }}"
+                            class="w-100 h-100 object-fit-cover" alt="{{ community.name }}"
+                            onerror="this.src='https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&auto=format&fit=crop&q=80'">
                         <div class="position-absolute bottom-0 start-0 w-100 p-3 text-white"
                             style="background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);">
                             <h4 class="mb-0 fw-bold">{{ community.name }}</h4>

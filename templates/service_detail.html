@@ -10,9 +10,9 @@
             <div class="col-lg-8">
                 <!-- Service Image -->
                 <div class="card mb-4">
-                    <img src="{{ url_for('static', filename='images/' + service.image_url) }}" class="card-img-top"
+                    <img src="{{ service.get_image_url() }}" class="card-img-top"
                         alt="{{ service.title }}" style="height: 400px; object-fit: cover;"
-                        onerror="this.src='https://via.placeholder.com/800x400?text=Service+Image'">
+                        onerror="this.src='https://images.unsplash.com/photo-1542744173-05336fcc7ad4?w=800&auto=format&fit=crop&q=80'">
                 </div>
 
                 <!-- Service Info -->
@@ -190,9 +190,10 @@
                     <div class="card-body">
                         {% for related in related_services %}
                         <div class="d-flex mb-3 {% if not loop.last %}pb-3 border-bottom{% endif %}">
-                            <img src="{{ url_for('static', filename='images/' + related.image_url) }}" width="60"
-                                height="60" class="rounded me-3"
-                                onerror="this.src='https://via.placeholder.com/60?text=Service'">
+                            <img src="{{ related.get_image_url() }}" width="60"
+                                height="60" class="rounded object-fit-cover me-3"
+                                alt="{{ related.title }}"
+                                onerror="this.src='https://images.unsplash.com/photo-1542744173-05336fcc7ad4?w=200&auto=format&fit=crop&q=80'">
                             <div class="flex-grow-1">
                                 <a href="{{ url_for('service.detail', service_id=related.id) }}"
                                     class="text-decoration-none text-dark">

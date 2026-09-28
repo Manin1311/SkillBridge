@@ -221,7 +221,8 @@ def seed_sample_data():
             'description': 'I will build a high-performance, responsive web application tailored to your business needs with clean architecture, secure authentication, and seamless DB integration.',
             'price': 250.00,
             'delivery_time': '5 days',
-            'tags': 'React, Python, Flask, Node.js, PostgreSQL, Tailwind'
+            'tags': 'React, Python, Flask, Node.js, PostgreSQL, Tailwind',
+            'image_url': 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&auto=format&fit=crop&q=80'
         },
         {
             'user_id': user_map['alex_dev'].id,
@@ -230,7 +231,8 @@ def seed_sample_data():
             'description': 'Complete setup for your online store including payment gateway integration, product uploads, mobile responsiveness, and speed optimization.',
             'price': 180.00,
             'delivery_time': '4 days',
-            'tags': 'Shopify, WooCommerce, E-Commerce, Stripe, Responsive'
+            'tags': 'Shopify, WooCommerce, E-Commerce, Stripe, Responsive',
+            'image_url': 'https://images.unsplash.com/photo-1556742049-0a67c5574f73?w=800&auto=format&fit=crop&q=80'
         },
 
         # Graphic Design
@@ -241,7 +243,8 @@ def seed_sample_data():
             'description': 'Get a professional, unique logo design complete with brand guidelines, color palettes, typography specs, and vector source files (AI, EPS, SVG, PNG).',
             'price': 95.00,
             'delivery_time': '3 days',
-            'tags': 'Logo, Branding, Illustrator, Vector, Graphic Design'
+            'tags': 'Logo, Branding, Illustrator, Vector, Graphic Design',
+            'image_url': 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&auto=format&fit=crop&q=80'
         },
         {
             'user_id': user_map['sarah_design'].id,
@@ -250,7 +253,8 @@ def seed_sample_data():
             'description': 'Sleek, modern UI/UX design with interactive wireframes and components created in Figma. Ready for developer handoff.',
             'price': 140.00,
             'delivery_time': '4 days',
-            'tags': 'UI/UX, Figma, Web Design, Mobile App, Prototype'
+            'tags': 'UI/UX, Figma, Web Design, Mobile App, Prototype',
+            'image_url': 'https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=800&auto=format&fit=crop&q=80'
         },
 
         # Content Writing
@@ -261,7 +265,8 @@ def seed_sample_data():
             'description': 'Engaging, thoroughly researched, and SEO-optimized blog posts designed to rank high on Google search results and drive organic conversions.',
             'price': 45.00,
             'delivery_time': '2 days',
-            'tags': 'SEO, Blog Post, Content Writing, Copywriting, Marketing'
+            'tags': 'SEO, Blog Post, Content Writing, Copywriting, Marketing',
+            'image_url': 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&auto=format&fit=crop&q=80'
         },
         {
             'user_id': user_map['james_writer'].id,
@@ -270,7 +275,8 @@ def seed_sample_data():
             'description': 'Clear, precise technical documentation, software user manuals, whitepapers, and developer guides written for clarity.',
             'price': 120.00,
             'delivery_time': '3 days',
-            'tags': 'Technical Writing, Documentation, API, Whitepaper'
+            'tags': 'Technical Writing, Documentation, API, Whitepaper',
+            'image_url': 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&auto=format&fit=crop&q=80'
         },
 
         # Video Editing
@@ -281,7 +287,8 @@ def seed_sample_data():
             'description': 'Dynamic YouTube video editing with smooth transitions, motion graphics, sound effects, subtitles, and cinematic color grading.',
             'price': 85.00,
             'delivery_time': '3 days',
-            'tags': 'Premiere Pro, After Effects, Video Editing, YouTube'
+            'tags': 'Premiere Pro, After Effects, Video Editing, YouTube',
+            'image_url': 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&auto=format&fit=crop&q=80'
         },
         {
             'user_id': user_map['elena_video'].id,
@@ -290,7 +297,8 @@ def seed_sample_data():
             'description': 'High-retention captions, sound design, hook animations, and pacing designed specifically for Instagram Reels, Shorts, and TikTok.',
             'price': 40.00,
             'delivery_time': '1 day',
-            'tags': 'Reels, TikTok, Shorts, Captions, Viral Video'
+            'tags': 'Reels, TikTok, Shorts, Captions, Viral Video',
+            'image_url': 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&auto=format&fit=crop&q=80'
         },
 
         # Music & Audio
@@ -301,7 +309,8 @@ def seed_sample_data():
             'description': 'Remove background noise, umms, pauses, and echo. Professional equalization, compression, and loudness normalization for broadcast quality.',
             'price': 60.00,
             'delivery_time': '2 days',
-            'tags': 'Podcast, Audio Editing, Vocal Mixing, Audio Cleanup'
+            'tags': 'Podcast, Audio Editing, Vocal Mixing, Audio Cleanup',
+            'image_url': 'https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=800&auto=format&fit=crop&q=80'
         },
 
         # Photography
@@ -312,7 +321,8 @@ def seed_sample_data():
             'description': 'Flawless product photo retouching for Amazon, Shopify, and social media. Includes background removal, shadow creation, and color correction.',
             'price': 35.00,
             'delivery_time': '1 day',
-            'tags': 'Photoshop, Product Photography, Background Removal, Retouching'
+            'tags': 'Photoshop, Product Photography, Background Removal, Retouching',
+            'image_url': 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800&auto=format&fit=crop&q=80'
         },
 
         # Marketing
@@ -323,7 +333,8 @@ def seed_sample_data():
             'description': 'End-to-end Meta (Facebook/Instagram) and Google Ads campaign setup, audience targeting, ad copy, and performance analytics setup.',
             'price': 110.00,
             'delivery_time': '3 days',
-            'tags': 'Digital Marketing, Meta Ads, Google Ads, Growth, Strategy'
+            'tags': 'Digital Marketing, Meta Ads, Google Ads, Growth, Strategy',
+            'image_url': 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80'
         }
     ]
 
@@ -332,6 +343,12 @@ def seed_sample_data():
         if not existing_service:
             service = Service(**s_data)
             db.session.add(service)
+        else:
+            existing_service.image_url = s_data['image_url']
+            existing_service.price = s_data['price']
+            existing_service.description = s_data['description']
+            existing_service.delivery_time = s_data['delivery_time']
+            existing_service.tags = s_data['tags']
 
     # Seed Communities
     sample_communities = [
@@ -339,31 +356,31 @@ def seed_sample_data():
             'name': 'Full-Stack Web Developers',
             'description': 'A vibrant group for web developers sharing React, Node, Python, and modern web frameworks knowledge.',
             'category': 'Web Development',
-            'image_url': 'default-community.png'
+            'image_url': 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&auto=format&fit=crop&q=80'
         },
         {
             'name': 'UI/UX & Brand Designers Guild',
             'description': 'Connect with creative designers, share Figma prototypes, discuss typography, and receive feedback on your designs.',
             'category': 'Graphic Design',
-            'image_url': 'default-community.png'
+            'image_url': 'https://images.unsplash.com/photo-1542744094-3a31f272c490?w=800&auto=format&fit=crop&q=80'
         },
         {
             'name': 'Content Creators & Copywriters',
             'description': 'Exchange SEO techniques, content strategy tips, and copywriting masterclasses with industry peers.',
             'category': 'Content Writing',
-            'image_url': 'default-community.png'
+            'image_url': 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&auto=format&fit=crop&q=80'
         },
         {
             'name': 'Video Editors & Motion Artists',
             'description': 'Discuss Premiere Pro tricks, After Effects templates, color grading presets, and video production workflows.',
             'category': 'Video Editing',
-            'image_url': 'default-community.png'
+            'image_url': 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&auto=format&fit=crop&q=80'
         },
         {
             'name': 'Growth Hackers & Digital Marketers',
             'description': 'Share ad strategies, SEO audit checklists, social media trends, and conversion rate optimization tips.',
             'category': 'Marketing',
-            'image_url': 'default-community.png'
+            'image_url': 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&auto=format&fit=crop&q=80'
         }
     ]
 
@@ -372,6 +389,9 @@ def seed_sample_data():
         if not existing_comm:
             comm = Community(**c_data)
             db.session.add(comm)
+        else:
+            existing_comm.image_url = c_data['image_url']
+            existing_comm.description = c_data['description']
 
     # Seed Website Feedback / Reviews
     sample_reviews = [
